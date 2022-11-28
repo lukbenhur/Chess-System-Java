@@ -1,12 +1,15 @@
 package aplicacao;
 
-import tabuleiro.Board;
+import chess.ChessMatch;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
+		ChessMatch chessMath = new ChessMatch();
 		
-		Board board = new Board(8, 8);
+		UI.printBoard(chessMath.getPieces());
+		
+		
 	}
 }
