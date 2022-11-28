@@ -10,7 +10,7 @@ public class Board {
 	public Board(Integer rows, Integer columns) {
 		this.rows = rows;
 		this.columns = columns;
-		pieces = new Piece[rows][columns];
+		pieces = new Piece[rows][columns]; //n entendi
 	}
 
 	public Integer getRows() {
@@ -35,7 +35,11 @@ public class Board {
 	}
 
 	public Piece piece(Position position) {
-
 		return pieces[position.getRow()][position.getColumn()];
+	}
+	
+	public void placePiece(Piece piece, Position position) {
+		pieces[position.getRow()][position.getColumn()] = piece;
+		piece.position = position;
 	}
 }

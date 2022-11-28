@@ -1,6 +1,10 @@
 package chess;
 
+import chess.enums.Color;
+import chess.pieces.King;
+import chess.pieces.Tower;
 import tabuleiro.Board;
+import tabuleiro.Position;
 
 public class ChessMatch {
 
@@ -8,6 +12,7 @@ public class ChessMatch {
 
 	public ChessMatch() {
 		board = new Board(8, 8);
+		initialSetup();
 	}
 
 	public ChessPiece[][] getPieces() {
@@ -18,5 +23,11 @@ public class ChessMatch {
 			}
 		}
 		return mat;
+	}
+	
+	private void initialSetup() {
+		board.placePiece(new Tower(board, Color.WHITE), new Position(2, 3));
+		board.placePiece(new King(board,Color.BLACK), new Position(0, 4));
+		board.placePiece(new King(board,Color.WHITE), new Position(7, 4));
 	}
 }
